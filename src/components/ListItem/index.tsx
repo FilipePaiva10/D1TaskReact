@@ -5,19 +5,18 @@ import * as ItemList from './styled';
 
 type Props = {
     key: number,
-    item: Item
+    item: Item,
+    DoneTask: (id: number, done: boolean) => void
 };
 
-export default ({ item }: Props) => {
-
-    const [isChecked, setIsChecked] = useState(item.done);
+export default ({ item, DoneTask }: Props) => {
 
     return (
-        <ItemList.Container done={isChecked}>
+        <ItemList.Container done={item.done}>
             <input
                 type="checkbox"
-                checked={isChecked}
-                onChange={e => setIsChecked(e.target.checked)} />
+                checked={item.done}
+                onChange={e => DoneTask(item.id, e.target.checked)} />
             <label>{item.name}</label>
         </ItemList.Container>
     )

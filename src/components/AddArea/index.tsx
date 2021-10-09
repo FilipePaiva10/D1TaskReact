@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useState, KeyboardEvent } from "react";
 
 import * as addArea from './styled';
 
-export default () => {
-    return(
+type props = {
+    onEnter: (taskName: string) => void;
+}
+
+export default ({ onEnter }: props) => {
+
+    const [inputText, setInputText] = useState('');
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+        if (e.code === "Enter" && inputText !== '') {
+            onEnter(inputText);
+            setInputText('');
+        }
+    }
+
+    return (
         <addArea.Container>
-            
+            <div className="Image">+</div>
+            <input
+                type="text"
+                placeholder="Digite sua tarefa"
+                onChange={e => setInputText(e.target.value)}
+                onKeyUp={handleKeyUp}
+            />
         </addArea.Container>
     )
 }

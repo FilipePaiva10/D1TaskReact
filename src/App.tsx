@@ -3,6 +3,7 @@ import * as app from './App.styled';
 
 import { Item } from './types/item';
 
+import AddArea from "./components/AddArea";
 import ListItem from "./components/ListItem";
 
 function App() {
@@ -20,15 +21,42 @@ function App() {
     }
   ]);
 
+  const handleAddTask = (taskName: string) => {
+    let newList = [...list];
+    newList.push({
+      id: list.length + 1,
+      name: taskName,
+      done: false
+    });
+    setList(newList);
+  }
+
+  const handleDoneTask = (id: number, done: boolean) => {
+    let newList = [...list];
+
+    newList.forEach((item, index) => {
+      if (item.id == id) {
+        item.done = done;
+      }
+    });
+
+    setList(newList);
+  }
+
   return (
     <app.Container>
       <app.Area>
         <app.Header>Lista de Tarefas</app.Header>
 
+        <AddArea
+          onEnter={handleAddTask}
+        />
+
         {list.map((item, index) => (
           <ListItem
             key={index}
             item={item}
+            DoneTask={handleDoneTask}
           />
         ))}
 
