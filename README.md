@@ -1,21 +1,31 @@
 ## Aplicativo para genreciar suas tarefas (Desafio B7Web 5 Em 5)
 
  <br>
- <img src="https://raw.githubusercontent.com/FilipePaiva10/D1TaskReact/main/github/Anima%C3%A7%C3%A3o.gif?token=AV2EX4I6H5UNK3OE4SSVTHDBMHG2E" alt="gif">
+ <img src="./github/Animação.gif" alt="gif">
+
+<br>
+
+## ⚙ Pré Requisitos
+
+- Antes de iniciar o projeto, você vai precisar das seguintes ferramentas: 
+    - ✔️ [VsCode](https://code.visualstudio.com/download);
+    - ✔️ [Git](https://git-scm.com/)
+    - ✔️ [NodeJS](https://nodejs.org/en/download/)
+
+<br>
 
 ## 🚀 Tecnologias Usadas
 
-This project was developed with the following technologies:
+Neste projeto foram usadas essas tecnologias:
 
-- ✔️ Typescript
+- ✔️ [React](https://pt-br.reactjs.org/)
 
-- ✔️ React 
+- ✔️ [Styled-components](https://styled-components.com/docs/basics#installation)
 
-- ✔️ React Hooks
-
-- ✔️ Styled-components
+- ✔️ [TypeScript](https://www.typescriptlang.org/)
 
 
+<br>
 
 ## Clonar o repositório
 ```bash
