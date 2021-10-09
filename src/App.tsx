@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { ThemeProvider, DefaultTheme } from "styled-components";
+
 import * as app from './App.styled';
 
 import { Item } from './types/item';
@@ -6,20 +8,24 @@ import { Item } from './types/item';
 import AddArea from "./components/AddArea";
 import ListItem from "./components/ListItem";
 
+import dark from "./styles/themes/dark";
+import light from "./styles/themes/light";
+import ThemeSwitcher from "./components/ThemeSwitcher";
+import usePersistedState from "./utils/usePersistedState";
+
 function App() {
 
-  const [list, setList] = useState<Item[]>([
-    {
-      id: 1,
-      name: 'Terminar Projeto D1',
-      done: true
-    },
-    {
-      id: 2,
-      name: 'Ir além com Projeto D1 - ThemeSwitcher -  Apagar e Agendar Tarefas',
-      done: false
+  const [theme, setTheme] = usePersistedState('light', light);
+
+  const toggleTheme = () => {
+    if (theme.title !== 'Dark') {
+      setTheme(dark);
+    } else {
+      setTheme(light);
     }
-  ]);
+  };
+
+  const [list, setList] = usePersistedState('tasks', []);
 
   const handleAddTask = (taskName: string) => {
     let newList = [...list];
@@ -35,7 +41,7 @@ function App() {
     let newList = [...list];
 
     newList.forEach((item, index) => {
-      if (item.id == id) {
+      if (item.id === id) {
         item.done = done;
       }
     });
@@ -43,25 +49,34 @@ function App() {
     setList(newList);
   }
 
+
+
   return (
-    <app.Container>
-      <app.Area>
-        <app.Header>Lista de Tarefas</app.Header>
-
-        <AddArea
-          onEnter={handleAddTask}
-        />
-
-        {list.map((item, index) => (
-          <ListItem
-            key={index}
-            item={item}
-            DoneTask={handleDoneTask}
+    <ThemeProvider theme={theme}>
+      <app.Container>
+        <app.Area>
+          <app.Header>
+          <app.HeaderTitle>Lista de Tarefas</app.HeaderTitle>
+          <ThemeSwitcher
+            toogleTheme={toggleTheme}
           />
-        ))}
+          </app.Header>
+          <AddArea
+            onEnter={handleAddTask}
+          />
 
-      </app.Area>
-    </app.Container>
+          {list.length > 0 &&
+            list.map((item: Item, index:number) => (
+              <ListItem
+                key={index}
+                item={item}
+                DoneTask={handleDoneTask}
+              />
+            ))
+          }
+        </app.Area>
+      </app.Container>
+    </ThemeProvider>
   )
 }
 

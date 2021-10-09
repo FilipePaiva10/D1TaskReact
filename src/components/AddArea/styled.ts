@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled, {DefaultTheme} from "styled-components";
 
 type ContainerProps = {
-
+    theme: DefaultTheme
 };
 
 
-export const Container = styled.div(( {} : ContainerProps) => (`
+export const Container = styled.div`
     border: 1px solid #555;
     border-radius: 15px;
     padding: 10px;
@@ -21,9 +21,9 @@ export const Container = styled.div(( {} : ContainerProps) => (`
         background: transparent; 
         outline: 0;
         border: 0;
-        color: #FFF;
+        color: ${props => props.theme.colors.primary};
         font-size: 18px;
         flex: 1;
     }
 
-`))
+`;

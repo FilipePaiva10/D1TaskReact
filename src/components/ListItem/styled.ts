@@ -1,14 +1,15 @@
-import styled from "styled-components";
+import styled, { DefaultTheme } from "styled-components";
 
-type ContainerProps = {
-    done: boolean
+interface ContainerProps{
+    done: boolean;
+    theme: DefaultTheme
 }
 
-export const Container = styled.div(({done} : ContainerProps) => (
+export const Container = styled.div(({done, theme}: ContainerProps) => (
     `
     display: flex;
     align-items: center;
-    background-color: #20212C;
+    background-color: ${theme.background.secundary};
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -20,7 +21,8 @@ export const Container = styled.div(({done} : ContainerProps) => (
     }
 
     label{
-        color: #CCC;
+        color: ${theme.colors.secundary};
         text-decoration: ${done ? 'line-through' : 'initial'};
     }
 `));
+

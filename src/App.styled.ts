@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background-color: #17181F;
-    color: #797A81;
+    background-color:  ${props => props.theme.background.primary};
+    color: ${props => props.theme.colors.primary};
     min-height: 100vh;
+    transition: all 1s ease 0s, transform 1s ease 0s;
 `;
 
 export const Area = styled.div`
@@ -12,11 +13,18 @@ export const Area = styled.div`
     padding: 10px;
 `;
 
-export const Header = styled.h1`
+export const Header = styled.div`
     margin: 0;
     padding: 0;
-    color: #FFF;
+    color: ${props => props.theme.colors.primary};
     text-align: center;
     border-bottom: 1px solid #444;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
+
+export const HeaderTitle = styled.h1`
+
+`
