@@ -12,12 +12,12 @@ function App() {
     {
       id: 1,
       name: 'Terminar Projeto D1',
-      done: false
+      done: true
     },
     {
       id: 2,
       name: 'Ir além com Projeto D1 - ThemeSwitcher -  Apagar e Agendar Tarefas',
-      done: true
+      done: false
     }
   ]);
 

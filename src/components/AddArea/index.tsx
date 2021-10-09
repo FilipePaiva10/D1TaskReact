@@ -24,6 +24,7 @@ export default ({ onEnter }: props) => {
                 type="text"
                 placeholder="Digite sua tarefa"
                 onChange={e => setInputText(e.target.value)}
+                value={inputText}
                 onKeyUp={handleKeyUp}
             />
         </addArea.Container>
