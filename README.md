@@ -1,9 +1,13 @@
 ## Aplicativo para genreciar suas tarefas (Desafio B7Web 5 Em 5)
 
  <br>
- <img src="./github/Animação.gif" alt="gif">
+ <img src="./github/Theme.gif" alt="gif">
 
 <br>
+
+## Fui além 
+  ✔️ Implementação de ThemeSwitcher
+
 
 ## ⚙ Pré Requisitos
 
@@ -24,6 +28,9 @@ Neste projeto foram usadas essas tecnologias:
 
 - ✔️ [TypeScript](https://www.typescriptlang.org/)
 
+- ✔️ [React-Switch](https://www.npmjs.com/package/react-switch)
+
+- ✔️ [ReactHooks](https://pt-br.reactjs.org/)
 
 <br>
 

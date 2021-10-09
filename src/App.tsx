@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ThemeProvider, DefaultTheme } from "styled-components";
+import React from "react";
+import { ThemeProvider} from "styled-components";
 
 import * as app from './App.styled';
 

@@ -1,4 +1,4 @@
-import React, { useState, KeyboardEvent, useContext } from "react";
+import React, { useState, KeyboardEvent} from "react";
 
 import * as addArea from './styled';
 
