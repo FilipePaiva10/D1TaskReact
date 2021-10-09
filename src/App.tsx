@@ -16,7 +16,7 @@ function App() {
     {
       id: 2,
       name: 'Ir além com Projeto D1 - ThemeSwitcher -  Apagar e Agendar Tarefas',
-      done: false
+      done: true
     }
   ]);
 
