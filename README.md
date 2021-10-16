@@ -49,3 +49,5 @@ npm install
 npm start
 ```
 
+## 😃 Gostou? me siga no -> [Likedln](https://www.linkedin.com/in/filipepaiva10/)
+
